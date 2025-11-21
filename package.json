@@ -1,0 +1,23 @@
+{
+  "name": "nextjs-saas",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "next dev"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "prisma": "^7.0.0"
+  },
+  "dependencies": {
+    "@prisma/client": "^7.0.0",
+    "bcryptjs": "^3.0.3",
+    "next": "^16.0.3",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
+  }
+}
