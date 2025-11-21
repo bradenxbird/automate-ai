@@ -1,0 +1,28 @@
+[00:00:01.859] Server  LOG     It looks like you're trying to use TypeScript but do not have the required package(s) installed.
+Installing dependencies
+
+If you are not trying to use TypeScript, please remove the tsconfig.json file from your package root (and any TypeScript files in your app and pages directories).
+
+[00:00:01.990] Server  LOG     
+[00:00:01.990] Server  LOG     Installing devDependencies (pnpm):
+[00:00:01.991] Server  LOG     - typescript
+[00:00:01.991] Server  LOG     
+[00:00:04.603] Server  LOG     
+[00:00:04.609] Server  LOG     
+[00:00:04.609] Server  LOG        We detected TypeScript in your project and reconfigured your tsconfig.json file for you. Strict-mode is set to false by default.
+[00:00:04.609] Server  LOG        The following suggested values were added to your tsconfig.json. These values can be changed to fit your project's needs:
+
+[00:00:04.609] Server  LOG        	- incremental was set to true
+[00:00:04.610] Server  LOG        	- include was updated to add '.next/types/**/*.ts'
+[00:00:04.610] Server  LOG        	- include was updated to add '.next/dev/types/**/*.ts'
+[00:00:04.610] Server  LOG        	- plugins was updated to add { name: 'next' }
+[00:00:04.610] Server  LOG     
+[00:00:04.699] Server  LOG      ✓ Ready in 4.4s
+[00:02:56.408] Server  ERROR    ⨯ Error: The default export is not a React Component in "/layout"
+[00:02:56.554] Server  ERROR    ⨯ Error: The default export is not a React Component in "/layout"
+[00:02:57.427] Browser ERROR   uncaughtError: Error: The default export is not a React Component in "/layout"
+[00:08:34.928] Server  LOG      ✓ Compiled in 101ms
+[00:08:35.379] Server  ERROR    ⨯ Error: The default export is not a React Component in "/page"
+[00:08:35.684] Server  ERROR    ⨯ Error: The default export is not a React Component in "/page"
+[00:08:36.002] Browser ERROR   uncaughtError: Error: The default export is not a React Component in "/page"
+[00:08:54.302] Server  LOG      ✓ Compiled in 71ms
