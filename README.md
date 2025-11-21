@@ -32,10 +32,8 @@ This is the foundation of an **AI-powered automation service** designed for scal
 ### 🚧 Coming Soon
 - Admin dashboard  
 - Blog CMS (posts, tags, categories)  
-- SEO management  
-- Media library  
+- AI Search Management  
 - User roles & permissions  
-- Full automation builder  
 - AI agent workflows  
 - API endpoints for automation triggers  
 
