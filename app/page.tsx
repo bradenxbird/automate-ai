@@ -1,9 +1,13 @@
 "use client";
 
+import Hero from "@/components/Hero";
+import Features from "@/components/Features";
+
 export default function Home() {
   return (
-    <main className="min-h-screen flex items-center justify-center text-3xl">
-      Home Page Working 🎉
+    <main className="min-h-screen bg-white text-gray-900">
+      <Hero />
+      <Features />
     </main>
   );
 }

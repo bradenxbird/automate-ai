@@ -1,1 +1,5 @@
-[00:00:00.901] Server  LOG      ✓ Ready in 642ms
+[00:00:00.847] Server  LOG      ✓ Ready in 586ms
+[00:00:06.046] Browser WARN    initEternlDomAPI: domId 771947-136414-679122 false
+[00:00:06.046] Browser WARN    initEternlDomAPI: href http://localhost:3000/
+[00:13:32.541] Server  LOG      ✓ Compiled in 97ms
+[00:16:52.320] Server  LOG      ✓ Compiled in 24ms
