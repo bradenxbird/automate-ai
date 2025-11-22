@@ -1,105 +1,142 @@
 "use client";
 
 import { motion } from "framer-motion";
-import CTAButton from "./CTAButton";
-import ContactModal from "./ContactModal";
-import { useState } from "react";
-
-const fadeUp = (delay = 0) => ({
-  initial: { opacity: 0, y: 24 },
-  animate: { opacity: 1, y: 0 },
-  transition: { delay, duration: 0.7 }
-});
 
 export default function Hero() {
-  const [open, setOpen] = useState(false);
-
   return (
-    <section className="relative overflow-hidden bg-white py-28 px-6 text-center w-full max-w-6xl mx-auto">
+    <section className="relative flex flex-col items-center text-center px-6 py-32 max-w-6xl mx-auto">
 
-      {/* Soft radial background glow */}
+      {/* Desktop Login Button (top-right) */}
+      <div className="hidden md:flex absolute top-6 right-8 z-20">
+        <button className="px-5 py-2 border border-gray-300 bg-white hover:bg-gray-50 text-gray-800 rounded-lg font-medium shadow transition">
+          Login
+        </button>
+      </div>
+
+      {/* Background glowing blobs */}
       <motion.div
-        className="absolute inset-0 -z-10 flex justify-center"
+        className="absolute inset-0 -z-10"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 1.2 }}
+        transition={{ duration: 1.5 }}
       >
-        <div className="w-[40rem] h-[40rem] bg-purple-200/40 blur-3xl rounded-full" />
+        <div className="absolute left-[-10rem] top-20 w-[35rem] h-[35rem] bg-purple-400/20 blur-3xl rounded-full animate-pulse hidden md:block" />
+        <div className="absolute right-[-10rem] top-40 w-[30rem] h-[30rem] bg-purple-300/20 blur-3xl rounded-full animate-pulse hidden md:block" />
       </motion.div>
 
-      {/* Highlight accent */}
-      <motion.div
-        className="absolute right-10 top-32 -z-10 w-72 h-72 bg-gradient-to-br from-purple-300/20 to-purple-600/10 blur-2xl rounded-3xl rotate-12"
-        initial={{ opacity: 0, x: 40 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 1 }}
-      />
+      {/* Mobile top tag spacing fix */}
+      <div className="md:mt-10" />
 
-      {/* Top badge */}
-      <motion.div
-        initial={{ opacity: 0, y: 24 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0, duration: 0.7 }}
-        className="inline-flex items-center gap-2 rounded-full border border-gray-300 bg-white/70 backdrop-blur px-4 py-1 text-xs font-medium text-gray-600 shadow-sm"
+      {/* Top Tag */}
+      <motion.p
+        initial={{ opacity: 0, y: 12 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        className="text-sm font-medium text-purple-600 tracking-widest mb-4"
       >
-        <span className="h-1.5 w-1.5 bg-purple-500 rounded-full" />
-        AI Automation Services for Modern Teams
-      </motion.div>
+        • AI AUTOMATION SERVICES
+      </motion.p>
+
+
 
       {/* Headline */}
       <motion.h1
-        initial={{ opacity: 0, y: 24 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.1, duration: 0.7 }}
-        className="mt-6 text-5xl md:text-6xl font-bold tracking-tight leading-tight text-gray-900"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        className="text-5xl md:text-6xl font-bold text-gray-900 leading-tight"
       >
-        Automate Your Business with <br />
-        <span className="bg-gradient-to-r from-purple-600 to-purple-400 bg-clip-text text-transparent">
-          AI-Powered Workflows
+        Automate Your Business with{" "}
+        <span className="bg-gradient-to-r from-purple-600 to-purple-400 text-transparent bg-clip-text">
+          Intelligence
         </span>
       </motion.h1>
 
-      {/* Subheadline */}
+
+      {/* Single Centered Particle Cluster Behind Heading */}
+      <div className="relative w-full flex justify-center items-center pointer-events-none select-none mt-8">
+
+        <motion.span
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: [0, -12, 0] }}
+          transition={{ duration: 2.8, repeat: Infinity, repeatType: "mirror" }}
+          className="hidden md:block text-6xl mr-6 select-none"
+        >
+          💩
+        </motion.span>
+
+        <motion.div
+          className="hidden md:flex gap-4"
+          initial="hidden"
+          animate="visible"
+          variants={{
+            hidden: { opacity: 0 },
+            visible: { opacity: 1, transition: { staggerChildren: 0.05 } }
+          }}
+        >
+          {[...Array(40)].map((_, i) => (
+            <motion.div
+              key={`center-dot-${i}`}
+              className="w-3 h-3 rounded-full bg-purple-400/40"
+              variants={{
+                hidden: { opacity: 0, y: 15 },
+                visible: {
+                  opacity: 1,
+                  y: [0, -8, 0],
+                  transition: {
+                    duration: 2.8,
+                    repeat: Infinity,
+                    repeatType: "mirror",
+                    delay: i * 0.04,
+                  },
+                },
+              }}
+            />
+          ))}
+        </motion.div>
+
+        <motion.span
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: [-6, 6, -6] }}
+          transition={{ duration: 2.8, repeat: Infinity, repeatType: "mirror" }}
+          className="hidden md:block text-6xl ml-6 select-none"
+        >
+          💸
+        </motion.span>
+
+      </div>
+
+      {/* Description */}
       <motion.p
-        initial={{ opacity: 0, y: 24 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.25, duration: 0.7 }}
-        className="mt-6 text-lg md:text-xl text-gray-600 max-w-2xl mx-auto"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1 }}
+        className="text-lg text-gray-600 max-w-xl mt-4"
       >
-        We build custom AI automation systems that save time, cut costs, and
-        scale your operations effortlessly.
+        Save time. Cut costs. Scale operations. Automate Studio builds custom AI
+        systems designed to streamline the workflows your team performs every day.
       </motion.p>
 
-      {/* CTA buttons */}
+      {/* Button Row */}
       <motion.div
         initial={{ opacity: 0, y: 24 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.4, duration: 0.7 }}
-        className="flex justify-center gap-4 mt-10"
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1.1 }}
+        className="flex gap-4 mt-10"
       >
-        <CTAButton
-          label="Login to Automate Studio"
-          onClick={() => (window.location.href = "/api/auth/signin")}
-        />
-        <CTAButton
-          label="Talk With Us"
-          onClick={() => setOpen(true)}
-          secondary
-        />
-      </motion.div>
+        {/* Mobile Login Button */}
+        <button className="md:hidden px-6 py-3 bg-purple-600 hover:bg-purple-700 text-white rounded-xl font-medium shadow-md transition">
+          Login
+        </button>
 
-      {/* Modal */}
-      <ContactModal open={open} onClose={() => setOpen(false)} />
+        <button className="px-6 py-3 bg-white border border-gray-300 hover:bg-gray-50 rounded-xl font-medium transition">
+          Talk With Us
+        </button>
 
-      {/* Bottom subtle indicator */}
-      <motion.div
-        initial={{ opacity: 0, y: 24 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.6, duration: 0.7 }}
-        className="mt-12 flex justify-center items-center gap-2 text-sm text-gray-500"
-      >
-        <span className="h-1 w-6 bg-purple-400 rounded-full" />
-        Built with precision. Designed for automation.
+        {/* New: Call Our AI */}
+        <button className="px-6 py-3 bg-purple-600 hover:bg-purple-700 text-white rounded-xl font-medium shadow-md transition">
+          Call Our AI
+        </button>
       </motion.div>
     </section>
   );
