@@ -33,3 +33,8 @@
   fill: #ffffff !important;
   stroke: #ffffff !important;
 }
+
+.floating-call-button:hover {
+  background-color: #c084fc !important; /* light purple like other buttons */
+  transition: background-color 0.2s ease-in-out;
+}

@@ -5,6 +5,11 @@ import FloatingCallButton from "@/components/FloatingCallButton";
 export const metadata = {
   title: "Automate Studio",
   description: "AI-powered dashboard",
+  icons: {
+    icon: "/favicon.png",
+    shortcut: "/favicon.png",
+    apple: "/favicon.png",
+  },
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
