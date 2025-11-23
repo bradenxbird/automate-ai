@@ -1,0 +1,35 @@
+@keyframes bubbleIn {
+  0% {
+    opacity: 0;
+    transform: translateY(10px) scale(0.92);
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(-2px) scale(1.03);
+  }
+  100% {
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes bubblePulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(168, 85, 247, 0.35);
+  }
+  100% {
+    box-shadow: 0 0 0 16px rgba(168, 85, 247, 0);
+  }
+}
+
+.bubble-anim {
+  animation:
+    bubbleIn 0.5s ease-out,
+    bubblePulse 3s ease-out infinite;
+}
+
+/* Ensure phone icon stays white on all devices */
+.floating-call-button svg,
+.floating-call-button path {
+  fill: #ffffff !important;
+  stroke: #ffffff !important;
+}

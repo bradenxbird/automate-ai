@@ -4,10 +4,10 @@ import { motion } from "framer-motion";
 
 export default function Hero() {
   return (
-    <section className="relative flex flex-col items-center text-center px-6 py-32 max-w-6xl mx-auto">
+    <section className="relative flex flex-col items-center text-center px-4 sm:px-6 py-20 sm:py-28 max-w-full md:max-w-full lg:max-w-6xl mx-auto">
 
       {/* Desktop Login Button (top-right) */}
-      <div className="hidden md:flex absolute top-6 right-8 z-20">
+      <div className="flex absolute top-6 right-8 z-20">
         <button className="px-5 py-2 border border-gray-300 bg-white hover:bg-gray-50 text-gray-800 rounded-lg font-medium shadow transition">
           Login
         </button>
@@ -20,12 +20,12 @@ export default function Hero() {
         animate={{ opacity: 1 }}
         transition={{ duration: 1.5 }}
       >
-        <div className="absolute left-[-10rem] top-20 w-[35rem] h-[35rem] bg-purple-400/20 blur-3xl rounded-full animate-pulse hidden md:block" />
-        <div className="absolute right-[-10rem] top-40 w-[30rem] h-[30rem] bg-purple-300/20 blur-3xl rounded-full animate-pulse hidden md:block" />
+        <div className="absolute left-[-35rem] top-20 w-[35rem] h-[35rem] bg-purple-400/20 blur-3xl rounded-full animate-pulse hidden lg:block" />
+        <div className="absolute right-[-35rem] top-40 w-[30rem] h-[30rem] bg-purple-300/20 blur-3xl rounded-full animate-pulse hidden lg:block" />
       </motion.div>
 
       {/* Mobile top tag spacing fix */}
-      <div className="md:mt-10" />
+      <div className="mt-4 sm:mt-12" />
 
       {/* Top Tag */}
       <motion.p
@@ -54,19 +54,10 @@ export default function Hero() {
 
 
       {/* Single Centered Particle Cluster Behind Heading */}
-      <div className="relative w-full flex justify-center items-center pointer-events-none select-none mt-8">
-
-        <motion.span
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: [0, -12, 0] }}
-          transition={{ duration: 2.8, repeat: Infinity, repeatType: "mirror" }}
-          className="hidden md:block text-6xl mr-6 select-none"
-        >
-          💩
-        </motion.span>
+      <div className="relative w-full flex justify-center items-center pointer-events-none select-none mt-4 md:mt-6">
 
         <motion.div
-          className="hidden md:flex gap-4"
+          className="flex gap-2"
           initial="hidden"
           animate="visible"
           variants={{
@@ -77,32 +68,26 @@ export default function Hero() {
           {[...Array(40)].map((_, i) => (
             <motion.div
               key={`center-dot-${i}`}
-              className="w-3 h-3 rounded-full bg-purple-400/40"
+              className={`w-3 h-3 lg:w-6 lg:h-6 rounded-full bg-purple-400/40
+  ${i >= 20 ? "hidden sm:block" : ""} 
+  ${i >= 30 ? "sm:hidden md:block" : ""}`}
               variants={{
                 hidden: { opacity: 0, y: 15 },
                 visible: {
                   opacity: 1,
-                  y: [0, -8, 0],
+                  scaleY: [1, 2.5, 0.8, 2.2, 1],
                   transition: {
-                    duration: 2.8,
+                    duration: 3,
                     repeat: Infinity,
-                    repeatType: "mirror",
-                    delay: i * 0.04,
+                    repeatType: "loop",
+                    ease: "easeInOut",
+                    delay: i * 0.06,
                   },
                 },
               }}
             />
           ))}
         </motion.div>
-
-        <motion.span
-          initial={{ opacity: 0, y: -10 }}
-          animate={{ opacity: 1, y: [-6, 6, -6] }}
-          transition={{ duration: 2.8, repeat: Infinity, repeatType: "mirror" }}
-          className="hidden md:block text-6xl ml-6 select-none"
-        >
-          💸
-        </motion.span>
 
       </div>
 
@@ -111,7 +96,7 @@ export default function Hero() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
-        className="text-lg text-gray-600 max-w-xl mt-4"
+        className="text-lg text-gray-600 max-w-xl mt-12"
       >
         Save time. Cut costs. Scale operations. Automate Studio builds custom AI
         systems designed to streamline the workflows your team performs every day.
@@ -122,20 +107,16 @@ export default function Hero() {
         initial={{ opacity: 0, y: 24 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1.1 }}
-        className="flex gap-4 mt-10"
+        className="flex flex-col md:flex-row gap-4 md:gap-4 mt-10 w-full md:w-auto items-stretch md:items-center justify-center md:justify-center"
       >
-        {/* Mobile Login Button */}
-        <button className="md:hidden px-6 py-3 bg-purple-600 hover:bg-purple-700 text-white rounded-xl font-medium shadow-md transition">
-          Login
-        </button>
 
-        <button className="px-6 py-3 bg-white border border-gray-300 hover:bg-gray-50 rounded-xl font-medium transition">
-          Talk With Us
+        <button className="w-[75%] md:w-auto mx-auto md:mx-0 px-6 py-3 bg-white border border-gray-300 hover:bg-gray-50 rounded-xl font-medium transition">
+          Solutions & Integrations
         </button>
 
         {/* New: Call Our AI */}
-        <button className="px-6 py-3 bg-purple-600 hover:bg-purple-700 text-white rounded-xl font-medium shadow-md transition">
-          Call Our AI
+        <button className="w-[75%] md:w-auto mx-auto md:mx-0 px-6 py-3 bg-purple-600 hover:bg-purple-500 text-white rounded-xl font-medium shadow-md transition">
+          Book An Appointment
         </button>
       </motion.div>
     </section>
