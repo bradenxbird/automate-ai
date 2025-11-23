@@ -27,7 +27,7 @@
     bubblePulse 3s ease-out infinite;
 }
 
-/* Ensure phone icon stays white on all devices */
+/* Ensure phone icon stays white on all devices expecially mobile*/
 .floating-call-button svg,
 .floating-call-button path {
   fill: #ffffff !important;
