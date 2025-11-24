@@ -53,14 +53,14 @@ const integrationsData: Record<string, { name: string; description: string; logo
     {
       name: "Genesys Cloud",
       description: "Automate pre-call triage, post-call notes, and dispositions.",
-      logo: "/integrations/genesys.png",
+      logo: "/integrations/genesys.jpeg",
     },
   ],
   CRM: [
     {
       name: "HubSpot",
       description: "Auto-log activities, update deals, and enrich contacts with AI.",
-      logo: "/integrations/hubspot.png",
+      logo: "/integrations/hubspot.jpeg",
     },
     {
       name: "Salesforce",
@@ -104,7 +104,7 @@ const integrationsData: Record<string, { name: string; description: string; logo
     {
       name: "Apollo",
       description: "Trigger AI follow-ups based on intent and engagement signals.",
-      logo: "/integrations/apollo.png",
+      logo: "/integrations/apollo.jpeg",
     },
   ],
   Telephony: [
@@ -275,7 +275,7 @@ export default function IntegrationsPage() {
             {...fadeUp(0.1)}
             className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-gray-900 max-w-3xl"
           >
-            AI Integrations For Business Stack
+            AI Integrations That Automate Your Entire Business
           </motion.h1>
 
           <motion.p
