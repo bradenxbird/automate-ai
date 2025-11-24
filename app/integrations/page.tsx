@@ -5,6 +5,7 @@ import React from "react";
 
 import { motion } from "framer-motion";
 import { useState } from "react";
+import { useEffect } from "react";
 
 const categories = [
   "Calendars",
@@ -239,6 +240,11 @@ const fadeUp = (delay = 0) => ({
 
 export default function IntegrationsPage() {
   const [openCategory, setOpenCategory] = useState<string | "all">("all");
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const handleFilterClick = (category: string | "all") => {
     setOpenCategory((current) => (current === category ? "all" : category));
@@ -263,7 +269,7 @@ export default function IntegrationsPage() {
           <div className="absolute right-[-18rem] bottom-0 w-[28rem] h-[28rem] bg-purple-300/20 blur-3xl rounded-full" />
         </motion.div>
 
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col justify-center min-h-[40vh] pt-16 pb-10">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col justify-center min-h-[30vh] md:min-h-[40vh] pt-16 pb-10">
           <motion.div
             {...fadeUp(0)}
             className="inline-flex mb-4 text-xs font-medium text-purple-700 bg-purple-50 border border-purple-100 rounded-full px-3 py-1 w-fit"
@@ -291,7 +297,7 @@ export default function IntegrationsPage() {
       </section>
 
       {/* Filters + Grid */}
-      <section className="max-w-6xl mx-auto px-4 sm:px-6 pb-24">
+      <section className="max-w-6xl mx-auto px-6 sm:px-8 pb-24">
         <div className="grid grid-cols-1 md:grid-cols-[240px_minmax(0,1fr)] gap-10 md:gap-12 mt-8">
           {/* Left: Filters */}
           <aside className="md:pt-4 md:sticky md:top-24 md:self-start">
@@ -352,13 +358,11 @@ export default function IntegrationsPage() {
                       <motion.div
                         key={item.name}
                         initial={{ opacity: 0, y: 16 }}
-                        whileInView={{
-                          opacity: 1,
-                          y: 0,
-                          scale: 1.02,
-                          rotateX: 1.5,
-                          rotateY: -1.5,
-                        }}
+                        animate={
+                          mounted
+                            ? { opacity: 1, y: 0, scale: 1.02, rotateX: 1.5, rotateY: -1.5 }
+                            : {}
+                        }
                         whileHover={{
                           scale: 1.04,
                           rotateX: 1.5,
@@ -370,11 +374,10 @@ export default function IntegrationsPage() {
                           },
                         }}
                         whileTap={{ scale: 0.97 }}
-                        viewport={{ once: true, amount: 0.4 }}
                         transition={{ delay: idx * 0.06, duration: 0.5, ease: [0.16, 1, 0.3, 1] as any }}
-                        className="relative p-5 md:p-6 rounded-2xl bg-white/60 backdrop-blur-xl shadow-[0_10px_30px_rgba(15,23,42,0.06)] border border-white/40 hover:shadow-[0_18px_50px_rgba(15,23,42,0.14)] transition-all duration-500 flex flex-col gap-3"
+                        className="relative p-5 md:p-6 rounded-2xl bg-white/60 backdrop-blur-xl shadow-[0_10px_30px_rgba(15,23,42,0.06)] border border-white/40 hover:shadow-[0_18px_50px_rgba(15,23,42,0.14)] transition-all duration-500 flex flex-row items-start gap-4 md:flex-col md:items-start md:gap-3"
                       >
-                        <div className="flex items-center gap-3">
+                        <div className="flex-shrink-0 flex items-center gap-3">
                           <div className="h-9 w-9 rounded-xl bg-gray-50 border border-gray-100 flex items-center justify-center overflow-hidden">
                             <img
                               src={item.logo}
@@ -386,9 +389,11 @@ export default function IntegrationsPage() {
                             {item.name}
                           </h3>
                         </div>
-                        <p className="text-xs md:text-sm text-gray-600 leading-relaxed">
-                          {item.description}
-                        </p>
+                        <div className="flex-1">
+                          <p className="text-xs md:text-sm text-gray-600 leading-relaxed">
+                            {item.description}
+                          </p>
+                        </div>
                       </motion.div>
                     ))}
                   </div>
