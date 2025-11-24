@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 export default function Hero() {
   return (
@@ -110,9 +111,11 @@ export default function Hero() {
         className="flex flex-col md:flex-row gap-4 md:gap-4 mt-10 w-full md:w-auto items-stretch md:items-center justify-center md:justify-center"
       >
 
-        <button className="w-[75%] md:w-auto mx-auto md:mx-0 px-6 py-3 bg-white border border-gray-300 hover:bg-gray-50 rounded-xl font-medium transition">
-          Solutions & Integrations
-        </button>
+        <Link href="/integrations" className="w-[75%] md:w-auto mx-auto md:mx-0">
+          <button className="w-full px-6 py-3 bg-white border border-gray-300 hover:bg-gray-50 rounded-xl font-medium transition">
+            Solutions & Integrations
+          </button>
+        </Link>
 
         {/* New: Call Our AI */}
         <button className="w-[75%] md:w-auto mx-auto md:mx-0 px-6 py-3 bg-purple-600 hover:bg-purple-500 text-white rounded-xl font-medium shadow-md transition">
