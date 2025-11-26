@@ -1,6 +1,7 @@
 import "./globals.css";
 import type { ReactNode } from "react";
 import FloatingCallButton from "@/components/FloatingCallButton";
+import Navbar from "@/components/Navbar";
 
 export const metadata = {
   title: "Automate Studio",
@@ -16,6 +17,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
       <body className="antialiased bg-white text-gray-900">
+        <Navbar />
         {children}
         <FloatingCallButton />
       </body>
