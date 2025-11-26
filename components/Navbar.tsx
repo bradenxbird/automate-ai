@@ -91,17 +91,97 @@ export default function Navbar() {
               `}
             >
               <ul className="w-1/3 space-y-3 text-gray-700">
-                <li className="hover:text-purple-600 cursor-pointer industry-item" data-id="healthcare">Healthcare</li>
-                <li className="hover:text-purple-600 cursor-pointer industry-item" data-id="financial">Financial Services & Banking</li>
-                <li className="hover:text-purple-600 cursor-pointer industry-item" data-id="retail">E-commerce & Retail</li>
-                <li className="hover:text-purple-600 cursor-pointer industry-item" data-id="servicebusinesses">Service Businesses</li>
-                <li className="hover:text-purple-600 cursor-pointer industry-item" data-id="supplychain">Supply Chain & Logistics</li>
-                <li className="hover:text-purple-600 cursor-pointer industry-item" data-id="realestate">Real Estate</li>
-                <li className="hover:text-purple-600 cursor-pointer industry-item" data-id="customerservice">Customer Service</li>
-                <li className="hover:text-purple-600 cursor-pointer industry-item" data-id="marketingsales">Marketing & Sales</li>
+                <li
+                  className={
+                    `cursor-pointer industry-item px-2 py-1 rounded-md transition-all 
+                     hover:bg-purple-50/70 hover:text-purple-700
+                     ${activeIndustry === "healthcare" ? "bg-purple-50/70 text-purple-700" : ""}`
+                  }
+                  data-id="healthcare"
+                  onMouseEnter={() => setActiveIndustry("healthcare")}
+                >
+                  Healthcare
+                </li>
+                <li
+                  className={
+                    `cursor-pointer industry-item px-2 py-1 rounded-md transition-all 
+                     hover:bg-purple-50/70 hover:text-purple-700
+                     ${activeIndustry === "financial" ? "bg-purple-50/70 text-purple-700" : ""}`
+                  }
+                  data-id="financial"
+                  onMouseEnter={() => setActiveIndustry("financial")}
+                >
+                  Financial Services & Banking
+                </li>
+                <li
+                  className={
+                    `cursor-pointer industry-item px-2 py-1 rounded-md transition-all 
+                     hover:bg-purple-50/70 hover:text-purple-700
+                     ${activeIndustry === "retail" ? "bg-purple-50/70 text-purple-700" : ""}`
+                  }
+                  data-id="retail"
+                  onMouseEnter={() => setActiveIndustry("retail")}
+                >
+                  E-commerce & Retail
+                </li>
+                <li
+                  className={
+                    `cursor-pointer industry-item px-2 py-1 rounded-md transition-all 
+                     hover:bg-purple-50/70 hover:text-purple-700
+                     ${activeIndustry === "servicebusinesses" ? "bg-purple-50/70 text-purple-700" : ""}`
+                  }
+                  data-id="servicebusinesses"
+                  onMouseEnter={() => setActiveIndustry("servicebusinesses")}
+                >
+                  Service Businesses
+                </li>
+                <li
+                  className={
+                    `cursor-pointer industry-item px-2 py-1 rounded-md transition-all 
+                     hover:bg-purple-50/70 hover:text-purple-700
+                     ${activeIndustry === "supplychain" ? "bg-purple-50/70 text-purple-700" : ""}`
+                  }
+                  data-id="supplychain"
+                  onMouseEnter={() => setActiveIndustry("supplychain")}
+                >
+                  Supply Chain & Logistics
+                </li>
+                <li
+                  className={
+                    `cursor-pointer industry-item px-2 py-1 rounded-md transition-all 
+                     hover:bg-purple-50/70 hover:text-purple-700
+                     ${activeIndustry === "realestate" ? "bg-purple-50/70 text-purple-700" : ""}`
+                  }
+                  data-id="realestate"
+                  onMouseEnter={() => setActiveIndustry("realestate")}
+                >
+                  Real Estate
+                </li>
+                <li
+                  className={
+                    `cursor-pointer industry-item px-2 py-1 rounded-md transition-all 
+                     hover:bg-purple-50/70 hover:text-purple-700
+                     ${activeIndustry === "customerservice" ? "bg-purple-50/70 text-purple-700" : ""}`
+                  }
+                  data-id="customerservice"
+                  onMouseEnter={() => setActiveIndustry("customerservice")}
+                >
+                  Customer Service
+                </li>
+                <li
+                  className={
+                    `cursor-pointer industry-item px-2 py-1 rounded-md transition-all 
+                     hover:bg-purple-50/70 hover:text-purple-700
+                     ${activeIndustry === "marketingsales" ? "bg-purple-50/70 text-purple-700" : ""}`
+                  }
+                  data-id="marketingsales"
+                  onMouseEnter={() => setActiveIndustry("marketingsales")}
+                >
+                  Marketing & Sales
+                </li>
               </ul>
 
-              <div className="w-2/3 text-sm leading-relaxed text-gray-600">
+              <div className="w-2/3 text-sm leading-relaxed text-gray-700 bg-purple-50/70 rounded-lg p-4 backdrop-blur-sm shadow-inner">
                 <p className="industry-desc" id="industry-desc">Customer service automation is a powerful tool for modern businesses, streamlining operations and enhancing efficiency. We leverage cutting-edge technology to optimize everything from interactive chatbots and AI agents to lead qualification and appointment scheduling.<br></br><br></br>
 Hover over each industry below to explore the customized ways we implement AI automation tailored to your unique business needs and drive measurable growth.</p>
               </div>
