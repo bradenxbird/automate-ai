@@ -59,8 +59,13 @@ export default function Navbar() {
       <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
 
         {/* LOGO */}
-        <Link href="/" className="text-xl font-semibold tracking-tight">
-          Automate Studio
+        <Link href="/" className="flex items-center">
+          <img 
+            src="/logo.png" 
+            alt="Automate Studio Logo" 
+            className="h-14 w-auto"
+          />
+          <span className="ml-3 text-xl font-semibold text-gray-800">Automate Studio</span>
         </Link>
 
         {/* DESKTOP NAV */}
