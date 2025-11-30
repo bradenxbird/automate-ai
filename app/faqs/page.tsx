@@ -110,7 +110,7 @@ export default function FAQPage() {
           </h1>
 
           <p className="mt-4 text-lg text-gray-700 max-w-2xl">
-            Explore in-depth answers about Automate Studio’s AI-powered automation systems, how they integrate with your tools, streamline operations, enhance productivity, and support your business from initial setup through long-term optimization.
+            Explore in-depth answers about Automate Studio’s AI powered automation systems, how they integrate with your tools, streamline operations, enhance productivity, and support your business from initial setup through long-term optimization.
           </p>
         </div>
       </section>
