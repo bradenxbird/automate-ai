@@ -87,7 +87,7 @@ export default function Navbar() {
 
             <div
               onMouseEnter={() => setIndustriesOpen(true)}
-              onMouseLeave={() => setIndustriesOpen(false)}
+              onMouseLeave={() => setIndustriesOpen(false)} 
               className={`
                 absolute top-full left-1/2 -translate-x-1/2 w-[700px]
                 bg-white/80 backdrop-blur-xl shadow-xl rounded-xl p-6 flex gap-6 z-40
