@@ -86,7 +86,7 @@ export default function Navbar() {
             <span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-purple-600 transition-all duration-300 hover:w-full"></span>
 
             <div
-              onMouseEnter={() => setIndustriesOpen(true)}
+              onMouseEnter={() => setIndustriesOpen(true)} 
               onMouseLeave={() => setIndustriesOpen(false)} 
               className={`
                 absolute top-full left-1/2 -translate-x-1/2 w-[700px]
