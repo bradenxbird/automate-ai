@@ -9,7 +9,7 @@ export default function FloatingCallButton() {
 
   useEffect(() => {
     setShowBubble(true);
-    setTimeout(() => setShowBubble(false), 5000);
+    setTimeout(() => setShowBubble(false), 8000);
   }, []);
 
   return (
