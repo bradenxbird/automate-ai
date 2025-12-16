@@ -24,7 +24,7 @@ export default function FloatingCallButton() {
   bg-white/80 backdrop-blur-xl
   border border-white/40
   shadow-[0_6px_20px_rgba(0,0,0,0.10)]
-  z-50
+  z-50 
   bubble-anim
 "
         >
