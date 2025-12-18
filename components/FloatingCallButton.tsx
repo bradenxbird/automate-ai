@@ -21,7 +21,7 @@ export default function FloatingCallButton() {
   px-4 py-2.5
   rounded-2xl
   text-sm font-medium text-gray-900
-  bg-white/80 backdrop-blur-xl
+  bg-white/80 backdrop-blur-xl 
   border border-white/40
   shadow-[0_6px_20px_rgba(0,0,0,0.10)]
   z-50 
