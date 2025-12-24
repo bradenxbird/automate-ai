@@ -25,7 +25,7 @@ export default function FloatingCallButton() {
   border border-white/40
   shadow-[0_6px_20px_rgba(0,0,0,0.10)]
   z-50
-  bubble-anim
+  bubble-anim 
 "
         >
           Book a demo over the phone! 📆
