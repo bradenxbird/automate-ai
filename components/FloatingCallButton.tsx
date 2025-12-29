@@ -18,7 +18,7 @@ export default function FloatingCallButton() {
         <div
           className="
   fixed bottom-24 right-6
-  px-4 py-2.5
+  px-4 py-2.5 
   rounded-2xl
   text-sm font-medium text-gray-900
   bg-white/80 backdrop-blur-xl 
